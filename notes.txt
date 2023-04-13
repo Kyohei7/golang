@@ -1,0 +1,32 @@
+Final Project - DTS Golang Kominfo 2023
+
+LIst API
+
+USER
+Register ✅
+Login ✅
+
+PHOTO
+GetAll ✅
+GetOne ✅
+CreatePhoto ✅
+UpdatePhoto ✅
+DeletePhoto ✅
+
+COMMENT
+GetAll ✅
+GetOne ✅
+CreateComment ✅
+UpdateComment ✅
+DeleteComment ✅
+
+SOCIAL MEDIA
+GetAll
+GetOne
+CreateSocialMedia
+UpdateSocialMedia
+DeleteSocialMedia
+
+
+
+
