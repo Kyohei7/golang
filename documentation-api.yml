@@ -1,0 +1,543 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Final Project Golang - Kominfo 2023",
+    "description": "API List Documentation",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost:8080"
+    }
+  ],
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Comment"
+    },
+    {
+      "name": "Photo"
+    },
+    {
+      "name": "Social Media"
+    }
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "rizki",
+                  "email": "rizkimuhammad2301@gmail.com",
+                  "password": "rizki123",
+                  "age": 7
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "rizkimuhammad2301@gmail.com",
+                  "password": "rizki123"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/comments": {
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Create Comment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "photo_id": 1,
+                  "message": "test comment"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Get All",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/comments/1": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Get One Comment",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Update Comment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "photo_id": 2,
+                  "message": "test comment edit"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Delete Comment",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/photos": {
+      "post": {
+        "tags": [
+          "Photo"
+        ],
+        "summary": "Create Photo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "title edit",
+                  "caption": "caption edit",
+                  "photo_url": "google.com/image.png edit"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Photo"
+        ],
+        "summary": "Get All",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/photos/1": {
+      "put": {
+        "tags": [
+          "Photo"
+        ],
+        "summary": "Update Photo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "title": "title edit",
+                  "caption": "caption edit",
+                  "photo_url": "google.com/image.png edit"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Photo"
+        ],
+        "summary": "Get One Photo",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Photo"
+        ],
+        "summary": "Delete Book",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/social-media": {
+      "post": {
+        "tags": [
+          "Social Media"
+        ],
+        "summary": "Create Social Media",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Instagram",
+                  "social_media_url": "www.instagram.com/rizki07"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Social Media"
+        ],
+        "summary": "Get All",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/social-media/1": {
+      "get": {
+        "tags": [
+          "Social Media"
+        ],
+        "summary": "Get One Social Media",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Social Media"
+        ],
+        "summary": "Delete Social Media",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/social-media/2": {
+      "put": {
+        "tags": [
+          "Social Media"
+        ],
+        "summary": "Update Social Media",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Instagram edit",
+                  "social_media_url": "www.instagram.com/rizki07 edit"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpemtpbXVoYW1tYWQyMzAxQGdtYWlsLmNvbSIsImlkIjoxfQ.obRbHTa3pOZhhQKFnm44BFkKVcK5rFtFXpfKbcsDmBc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,25 +5,11 @@ import (
 	"latihan-simple-rest-api-middleware/middlewares"
 
 	"github.com/gin-gonic/gin"
-
-	_ "latihan-simple-rest-api-middleware/docs"
-
-	ginSwagger "github.com/swaggo/gin-swagger"
-
-	swaggerFile "github.com/swaggo/files"
 )
 
 func StartApp() *gin.Engine {
 
 	r := gin.Default()
-
-	r.GET("/swagger/documentation", ginSwagger.WrapHandler(swaggerFile.Handler))
-
-	// @title User API
-	// @version 1.0
-	// @description This is service for managing users
-	// @host localhost:8080
-	// @Basepath /
 	userRouter := r.Group("/users")
 	{
 		userRouter.POST("/register", controllers.UserRegister)
